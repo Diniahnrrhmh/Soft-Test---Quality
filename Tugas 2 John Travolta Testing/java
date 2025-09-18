@@ -1,0 +1,25 @@
+public class GajiKaryawan {
+    public static void main(String[] args) {
+        int jamKerja = 52;
+        int rate = 15000;
+        int pengeluaran = 600000;
+        double gaji;
+
+        if (jamKerja <= 40) {
+            gaji = jamKerja * rate;
+        } else {
+            gaji = 40 * rate + (jamKerja - 40) * rate * 1.5;
+        }
+
+        double selisih = gaji - pengeluaran;
+        System.out.println("Total Gaji: Rp " + gaji);
+
+        if (selisih > 0) {
+            System.out.println("Bisa menabung Rp " + selisih);
+        } else if (selisih == 0) {
+            System.out.println("Tidak bisa menabung");
+        } else {
+            System.out.println("Cari tambahan");
+        }
+    }
+}
