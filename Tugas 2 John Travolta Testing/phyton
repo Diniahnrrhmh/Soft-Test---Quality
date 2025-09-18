@@ -1,0 +1,21 @@
+def hitung_gaji(jam_kerja, rate, pengeluaran):
+    if jam_kerja <= 40:
+        gaji = jam_kerja * rate
+    else:
+        gaji = 40 * rate + (jam_kerja - 40) * rate * 1.5
+
+    selisih = gaji - pengeluaran
+
+    if selisih > 0:
+        status = f"Bisa menabung sebesar Rp {selisih:,}"
+    elif selisih == 0:
+        status = "Tidak bisa menabung"
+    else:
+        status = "Cari tambahan"
+
+    return gaji, status
+
+# Testing
+print(hitung_gaji(52, 15000, 600000)) 
+print(hitung_gaji(40, 15000, 600000))
+print(hitung_gaji(30,15000, 600000))
