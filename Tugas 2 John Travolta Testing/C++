@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int jamKerja, rate, pengeluaran;
+    double gaji, selisih;
+
+    // Input data
+    cout << "Masukkan jam kerja: ";
+    cin >> jamKerja;
+    cout << "Masukkan rate per jam: ";
+    cin >> rate;
+    cout << "Masukkan pengeluaran minggu ini: ";
+    cin >> pengeluaran;
+
+    // Hitung gaji
+    if (jamKerja <= 40) {
+        gaji = jamKerja * rate;
+    } else {
+        gaji = 40 * rate + (jamKerja - 40) * rate * 1.5;
+    }
+
+    // Hitung selisih
+    selisih = gaji - pengeluaran;
+
+    // Output hasil
+    cout << "Total gaji: Rp " << gaji << endl;
+
+    if (selisih > 0) {
+        cout << "Bisa menabung sebesar Rp " << selisih << endl;
+    } else if (selisih == 0) {
+        cout << "Tidak bisa menabung" << endl;
+    } else {
+        cout << "Cari tambahan, minus Rp " << -selisih << endl;
+    }
+
+    return 0;
+}
